@@ -2,12 +2,10 @@ import exceptions.FullCourseException;
 import exceptions.IncompatibleLevelsException;
 import exceptions.IncompatibleModalityException;
 import exceptions.IncompatibleScheduleException;
-import schedule.Day;
 import schedule.Schedule;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Course {
 

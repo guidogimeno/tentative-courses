@@ -20,7 +20,7 @@ public class CourseTest {
     private Schedule schedule;
 
     @Before
-    public void createTeacher() {
+    public void objectsCreation() {
         schedules.add(new Schedule(Day.TUESDAY, 13));
         schedules.add(new Schedule(Day.FRIDAY, 19));
 
