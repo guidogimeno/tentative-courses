@@ -1,31 +1,28 @@
 import schedule.Schedule;
-
 import java.util.List;
 
 
-public class Student extends Availability {
+public class Student {
 
     private Level level;
     private Modality modality = Modality.INDIVIDUAL;
+    private List<Schedule> schedules;
 
-    public Student() {
+    public Student(List<Schedule> schedules) {
+        this.schedules = schedules;
         this.level = Level.BEGINNER;
     }
 
-    public Student(Level level) {
-        this.level = level;
+    public boolean isAvaileableOn(Schedule schedule) {
+        return schedules.stream().anyMatch(s -> s.sameSchedule(schedule));
     }
 
-    public void addSchedule(Schedule schedule) {
-        schedules.add(schedule);
+    public boolean hasLevel(Level level) {
+        return this.level == level;
     }
 
-    public boolean hasDifferentLevel(Level level) {
-        return this.level != level;
-    }
-
-    public boolean hasDifferentModality(Modality modality) {
-        return this.modality != modality;
+    public boolean hasModality(Modality modality) {
+        return this.modality == modality;
     }
 
     public Level getLevel() {
@@ -42,10 +39,6 @@ public class Student extends Availability {
 
     public void changeModality(Modality modality) {
         this.modality = modality;
-    }
-
-    public List<Schedule> getSchedules() {
-        return this.schedules;
     }
 
 }

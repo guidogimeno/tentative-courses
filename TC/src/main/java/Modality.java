@@ -9,8 +9,8 @@ public enum Modality {
         this.maximum = maximum;
     }
 
-    public boolean doesNotAllow(int numberOfStudents) {
-        return numberOfStudents > this.maximum;
+    public int maximumAllowed() {
+        return this.maximum;
     }
 
 }
